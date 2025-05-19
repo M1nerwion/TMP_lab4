@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  build_windows:
     runs-on: windows-latest
 
     strategy:
@@ -53,7 +53,8 @@ jobs:
 
     - name: Build
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
-
+      
+  build_linux:
     runs-on: ubuntu-latest
 
     strategy:
